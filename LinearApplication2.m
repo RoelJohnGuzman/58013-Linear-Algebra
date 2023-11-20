@@ -1,0 +1,18 @@
+syms x y;
+eq1 = 4*x+3*y ==20;
+eq2 = -5*x+9*y ==26;
+eq1;
+eq2;
+[eq1,eq2] =equationsToMatrix([eq1,eq2],[x,y]);
+c=linsolve(eq1,eq2);
+disp(c);
+plot(eq1,eq2);
+title('My plot');
+grid on;
+xlabel('x-axis');
+ylabel('y-axis');
+legend('Data points');
+hold on;
+[x,y] = ginput(2);
+plot(eq1,eq2);
+plot(x,y, '=');
